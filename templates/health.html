@@ -1,0 +1,20 @@
+{% extends 'index.html' %}
+{% block body %}
+
+<div class="container">
+    <div class="row">
+    {% for r in response %}
+        <div class="content row my-2">
+        <div class="col-6"><img src="{{r.urlToImage}}" class="img-thumbnail" alt="Image is not Available"  style="width:90em"></div>
+        <div class="col-6"><h2>News Title: {{r.title}}</h2>
+        
+        <h4>Author:{{r.author}}</h4>
+        <h6>Publish Date:{{r.publishedAt}}</h6>
+        <p>Description: {{r.description}}</p>
+        <a href="{{r.url}}" class="btn btn-primary">Know More</a></div>
+        </div>
+    {% endfor %}
+    </div>
+</div>
+
+{% endblock body %}
